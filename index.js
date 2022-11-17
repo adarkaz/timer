@@ -8,6 +8,7 @@ const client = new eris.Client(config.token)
 
 async function start() {
     for(; ;) {
+        await sleep(config.timeTillRecount);
         let message = '';
         for(let input of config.dates) {
             let startDate = moment(new Date());
@@ -32,7 +33,6 @@ async function start() {
 
         let data = fs.readFileSync('./temp.cliv').toString().split(' ');
         client.editMessage(data[0], data[1], `${message}`)
-        await sleep(config.timeTillRecount);
     }
 };
 
