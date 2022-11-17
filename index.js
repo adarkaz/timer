@@ -22,7 +22,7 @@ async function start() {
                 .replace('{3}', (seconds / 60 / 60).toFixed(1))
                 .replace('{4}', (seconds / 60 / 60 / 24).toFixed(1))
                 .replace('{5}', (seconds / 60 / 60 / 24 / 7).toFixed(1))
-                .replace('{6}', moment(endDate).diff(startDate, 'months'))
+                .replace('{6}', moment(endDate).diff(startDate, 'months', true).toFixed(1))
             }
             
             if(seconds <= 0) {
